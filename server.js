@@ -1,3 +1,4 @@
+import compression from 'compression';
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
@@ -79,7 +80,8 @@ const fixArticle = (url, article) => {
 app.prepare().then(() => {
   const server = express();
 
-  // server.enable('trust proxy'); // only if you're behind a reverse proxy (Heroku, Bluemix, AWS if you use an ELB, custom Nginx setup, etc)
+  server.enable('trust proxy'); // only if you're behind a reverse proxy (Heroku, Bluemix, AWS if you use an ELB, custom Nginx setup, etc)
+  server.use(compression());
   server.use(helmet());
   server.use(speedLimiter);
   server.use(cors());
