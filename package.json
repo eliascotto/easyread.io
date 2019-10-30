@@ -2,7 +2,7 @@
   "name": "webreader-client",
   "version": "1.0.0",
   "scripts": {
-    "start": "NODE_ENV=production next build && ./node_modules/pm2/bin/pm2-runtime start --interpreter ./node_modules/@babel/cli/bin/babel.js server.js -i max",
+    "start": "NODE_ENV=production next build && ./node_modules/pm2/bin/pm2-runtime start index.js -i max",
     "build": "next build",
     "dev": "nodemon --exec babel-node server.js",
     "server": "babel-node server.js",
@@ -15,6 +15,7 @@
     "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
     "@babel/node": "^7.6.3",
+    "@babel/register": "^7.6.2",
     "@emotion/core": "^10.0.21",
     "@emotion/styled": "^10.0.17",
     "@zeit/next-css": "^1.0.1",
