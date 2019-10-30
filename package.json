@@ -2,16 +2,17 @@
   "name": "webreader-client",
   "version": "1.0.0",
   "scripts": {
-    "start": "NODE_ENV=production next build && pm2 start --interpreter babel-node server.js -i max",
+    "start": "NODE_ENV=production next build && ./node_modules/pm2/bin/pm2-runtime start --interpreter ./node_modules/@babel/cli/bin/babel.js server.js -i max",
     "build": "next build",
     "dev": "nodemon --exec babel-node server.js",
     "server": "babel-node server.js",
     "start-next": "next start",
-    "poststart":  "node pm2 logs",
+    "poststart": "node ./node_modules/pm2/bin/pm2 logs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Elia Scotto",
   "dependencies": {
+    "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
     "@babel/node": "^7.6.3",
     "@emotion/core": "^10.0.21",
@@ -30,13 +31,13 @@
     "next": "^9.1.1",
     "next-fonts": "^0.19.0",
     "node-readability": "^3.0.0",
+    "pm2": "^4.1.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "readability": "git://github.com/mozilla/readability.git#master",
     "request": "^2.88.0",
     "store": "^2.0.12",
-    "url-regex": "^5.0.0",
-    "pm2": "^4.1.2"
+    "url-regex": "^5.0.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.4"
