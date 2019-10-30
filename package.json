@@ -6,11 +6,13 @@
     "build": "next build",
     "dev": "nodemon --exec babel-node server.js",
     "start-next": "next start",
-    "deploy": "NODE_ENV=production next build && pm2 start server.js -i max",
+    "deploy": "NODE_ENV=production next build && pm2 start  --interpreter babel-node server.js -i max",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Elia Scotto",
   "dependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/node": "^7.6.3",
     "@emotion/core": "^10.0.21",
     "@emotion/styled": "^10.0.17",
     "@zeit/next-css": "^1.0.1",
@@ -23,6 +25,7 @@
     "framer-motion": "^1.6.15",
     "helmet": "^3.21.2",
     "js-beautify": "^1.10.2",
+    "jsdom": "15.2.0",
     "next": "^9.1.1",
     "next-fonts": "^0.19.0",
     "node-readability": "^3.0.0",
@@ -31,14 +34,10 @@
     "readability": "git://github.com/mozilla/readability.git#master",
     "request": "^2.88.0",
     "store": "^2.0.12",
-    "url-regex": "^5.0.0"
+    "url-regex": "^5.0.0",
+    "pm2": "^4.1.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/node": "^7.6.3",
-    "jsdom": "15.2.0",
-    "jsdom-global": "3.0.2",
-    "nodemon": "^1.19.4",
-    "pm2": "^4.1.2"
+    "nodemon": "^1.19.4"
   }
 }
