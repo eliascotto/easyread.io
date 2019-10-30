@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'TisaPro';
-  src: url('/static/fonts/TisaPro-Regular.woff') format('woff');
+  src: url('/fonts/TisaPro-Regular.woff') format('woff');
   font-weight: regular;
   font-display: auto;
   font-style: normal;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: 'TisaPro';
-  src: url('/static/fonts/TisaPro-Italic.woff') format('woff');
+  src: url('/fonts/TisaPro-Italic.woff') format('woff');
   font-weight: regular;
   font-display: auto;
   font-style: italic;
@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: 'TisaPro';
-  src: url('/static/fonts/TisaPro-Bold.woff') format('woff');
+  src: url('/fonts/TisaPro-Bold.woff') format('woff');
   font-weight: bold;
   font-display: auto;
   font-style: normal;
@@ -24,7 +24,7 @@
 
 @font-face {
   font-family: 'TisaPro';
-  src: url('/static/fonts/TisaPro-BoldItalic.woff') format('woff');
+  src: url('/fonts/TisaPro-BoldItalic.woff') format('woff');
   font-weight: bold;
   font-display: auto;
   font-style: italic;
