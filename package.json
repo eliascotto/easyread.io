@@ -2,7 +2,7 @@
   "name": "webreader-client",
   "version": "1.0.0",
   "scripts": {
-    "start": "next build && ./node_modules/pm2/bin/pm2-runtime start server.compiled.js -i max",
+    "start": "next build && ./node_modules/pm2/bin/pm2-runtime start server.js -i max",
     "build": "next build",
     "dev": "nodemon --exec babel-node server.js",
     "server": "babel-node server.js",
