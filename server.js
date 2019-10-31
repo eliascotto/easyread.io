@@ -10,10 +10,12 @@ import urlregex from 'url-regex';
 import slowDown from 'express-slow-down';
 import helmet from 'helmet';
 import next from 'next';
+import ua from 'universal-analytics';
 
 // LOAD ENV FILES
 dotenv.config();
 
+const visitor = ua(process.env.GA_TRACKING_ID);
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
@@ -91,6 +93,11 @@ app.prepare().then(() => {
     const { action, url } = req.body;
 
     if (action == 'extract') {
+      visitor.event(
+        'Article',
+        'New Article received',
+        url,
+      ).send();
       readPage(url, (err, article) => {
         if (err) {
           console.error(err);

@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import Router from 'next/router'
+import Router from 'next/router';
 import store from 'store';
 import urlregex from 'url-regex';
 import { withThemeIndex } from 'components/ThemeIndexProvider';
@@ -21,6 +21,7 @@ class Home extends PureComponent {
     isLoading: false,
     inputError: false,
     parserError: false,
+    wait: false,
   }
 
   onSubmit = (urlValue) => {
@@ -30,6 +31,7 @@ class Home extends PureComponent {
 
     if (urlregex({ strict: true }).test(urlValue)) {
       this.setState({ inputError: false, isLoading: true });
+
       fetch('/api/article/', {
         method: 'POST',
         headers: { 'Content-Type':'application/json' },
@@ -42,7 +44,7 @@ class Home extends PureComponent {
       .then(data => {
         store.set('currentArticle', data);
         Router.push('/read');
-        this.setState({ parserError: false, isLoading: false });
+        this.setState({ parserError: false, isLoading: false, wait: true });
       })
       .catch((error) => {
         console.error(error);
@@ -85,7 +87,7 @@ class Home extends PureComponent {
   }
 
   render() {
-    const { isLoading } = this.state;
+    const { isLoading, wait } = this.state;
   
     return (
       <Container {...this.props}>
@@ -96,7 +98,7 @@ class Home extends PureComponent {
           <MainInput
             onSubmit={this.onSubmit}
           />
-          {isLoading ? this.renderLoader() : (
+          {isLoading || wait ? this.renderLoader() : (
             <Subtitle {...this.props}>
               {this.renderSubTitle()}
             </Subtitle>

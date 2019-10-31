@@ -33,9 +33,11 @@
     "pm2": "^4.1.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+    "react-ga": "^2.7.0",
     "readability": "git://github.com/mozilla/readability.git#master",
     "request": "^2.88.0",
     "store": "^2.0.12",
+    "universal-analytics": "^0.4.20",
     "url-regex": "^5.0.0"
   },
   "devDependencies": {

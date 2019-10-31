@@ -7,4 +7,7 @@ module.exports = withCSS(withFonts({
     config.resolve.modules.push(path.resolve(__dirname + '/src'));
     return config;
   },
+  env: {
+    'GA_TRACKING_ID': process.env.GA_TRACKING_ID,
+  },
 }));
