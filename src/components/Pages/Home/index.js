@@ -63,7 +63,7 @@ class Home extends PureComponent {
 
   renderSubTitle = () => {
     const { inputError, parserError, isLoading } = this.state;
-    const description = 'This tool is a web reader with a clean and intuitive interface. Makes articles easy to read.';
+    const description = 'This tool is a web reader with a clean and intuitive interface. Makes articles easy to read, without ads.';
     const iError = 'Invalid article url';
     const pError = 'Cannot parse the article in the page. Check the url or try again in a moment.';
 
