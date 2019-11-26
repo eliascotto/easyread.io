@@ -25,3 +25,9 @@ Parse an article url received from the main input, extract the article and retur
 - next.js (react.js ssr)
 - emotion
 - framer-motion
+
+## How to run locally
+### Server
+`npm run dev`
+### Next
+`npm run start-next`
