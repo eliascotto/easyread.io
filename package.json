@@ -27,7 +27,7 @@
     "framer-motion": "^1.6.15",
     "helmet": "^3.21.2",
     "js-beautify": "^1.10.2",
-    "jsdom": "15.2.0",
+    "jsdom": "16.5.0",
     "next": "^9.3.6",
     "next-fonts": "^0.19.0",
     "node-readability": "^3.0.0",
